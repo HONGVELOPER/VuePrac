@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Vue ifshow배우기</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <!-- 보여줘야할 항목이 한개이면 상관 없지만 여러개일 경우 template을 사용 -->
+      <template v-if="number === 1">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+      </template>
+      <div v-else-if="number === 2">Hi</div>
+      <div v-else>No</div>
+      <button @click="increase">Increment</button> {{ number }}
+    </div>
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+          number: 1
+        },
+        methods: {
+          increase() {
+            this.number++;
+          }
+        },
+      })
+    </script>
+  </body>
+</html>

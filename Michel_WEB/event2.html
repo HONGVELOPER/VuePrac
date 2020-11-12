@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>뷰 이벤트 익히기2</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <form v-on:submit.prevent="submit">
+        <input type="text"><br>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+          year: 2018
+        },
+        methods: {
+          plus() {
+            this.year++;
+          },
+          minus() {
+            this.year--;
+          },
+          submit() {
+            alert('submitted');
+            console.log('hello');
+          }
+        }
+      })
+    </script>
+  </body>
+</html>

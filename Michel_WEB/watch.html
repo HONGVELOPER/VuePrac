@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+  <meta charset="utf-8">
+    <title>뷰 이벤트 익히기2</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      {{ message }}
+      <button @click="changeMessage">Click</button>
+      {{ updated }}
+    </div>
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+          message: 'hello world',
+          updated: '아니요'
+        },
+        methods: {
+          changeMessage() {
+              this.message = "youngjin"
+          }
+        },
+        computed: {
+          reversedMessage() {
+            return this.message.split('').reverse().join('')
+          }
+        },
+        watch: {
+          message(newVal, oldVal) {
+            console.log(newVal, oldVal);
+            this.updated = '네';
+          }
+        }
+      })
+    </script>
+  </body>
+</html>

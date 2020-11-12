@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>뷰 이벤트 익히기</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      {{ year }} <br>
+      <button v-on:click="plus">더하기</button>
+      <button v-on:click="minus">빼기</button>
+    </div>
+    <script>
+        new Vue({
+          el: '#app',
+          data: {
+            year:2018
+          },
+          methods: {
+            plus() {
+              this.year++;
+            },
+            minus() {
+              this.year--;
+            }
+          }
+        })
+    </script>
+  </body>
+</html>

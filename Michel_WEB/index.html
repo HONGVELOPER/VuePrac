@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>뷰 기초 익히기</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      {{ nextYear('안녕') }}
+      <input :type="type" :value="inputData"> <br>
+      <a :href="getKossieCoderLink('kossiecoder')">vue.js 강좌 채널</a>
+      <button type="button" name="button">Click Me</button>
+    </div>
+      <script>
+        new Vue({
+          el: '#app',
+          data: {
+            person: {
+              name: '홍영진',
+              age: 24
+            },
+            inputData: 'hello',
+            type: 'text',
+            link: 'https://www.youtube.com/'
+          },
+          methods: {
+            getKossieCoderLink(channel) {
+              return this.link + channel;
+            },
+            nextYear(greeting) {
+              return greeting + '!' + this.person.name + '는 내년에 ' + (this.person.age + 1) + ' 살 입니다.';
+            },
+            otherMethod: function() {
+              this.nextYear();
+            }
+          }
+        })
+      </script>
+  </body>
+</html>
